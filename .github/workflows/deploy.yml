@@ -24,7 +24,8 @@ jobs:
         port: 21
         server-dir: /public/
         exclude: |
-          README.md
-          .gitignore
-          LICENSE
+          **/.git*/**
+          **/node_modules/**
           **/build/
+          /README.md
+          .gitignore

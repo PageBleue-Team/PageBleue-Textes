@@ -21,7 +21,7 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         port: 21
         log-level: minimal
-        local-dir: ./texts/
+        local-dir: /texts/
         server-dir: /public/texts/
         state-name: /public/texts/ftp-deploy-state.json
         exclude: |

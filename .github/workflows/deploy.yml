@@ -12,6 +12,7 @@ jobs:
     name: 🎉 Déploiement des textes
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    run: ls ./*
     steps:
     - name: 🔄 Synchronisation des fichiers
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5

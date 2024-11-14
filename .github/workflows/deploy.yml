@@ -22,7 +22,7 @@ jobs:
         port: 21
         log-level: minimal
         server-dir: /public/
-        state-name: /public/texts/ftp-deploy-state.json
+        state-name: public/texts/ftp-deploy-state.json
         exclude: |
           **/.git*/**
           **/node_modules/**

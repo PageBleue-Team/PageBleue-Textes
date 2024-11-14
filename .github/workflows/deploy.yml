@@ -1,0 +1,33 @@
+name: 🔰 Text Deployement
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: 🎉 Déploiement des textes
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🔄 Synchronisation des fichiers
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USER }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        port: 21
+        log-level: minimal
+        server-dir: /public/texts/
+        state-name: /public/texts/ftp-deploy-state.json
+        exclude: |
+          **/.git*/**
+          **/node_modules/**
+          **/build/
+          /README.md
+          .gitignore
+          LICENSE
+          

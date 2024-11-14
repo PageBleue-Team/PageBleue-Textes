@@ -25,4 +25,4 @@ jobs:
           README.md
           .gitignore
           LICENSE
-          
+          **/build/
